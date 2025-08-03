@@ -10,7 +10,7 @@ depends=(
     'ttf-jetbrains-mono'
     'ttf-jetbrains-mono-nerd'
 )
-source=('')
+source=()
 md5sums=('SKIP')
 install=stratos-kitty-config.install
 
