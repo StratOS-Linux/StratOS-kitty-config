@@ -10,12 +10,15 @@ depends=(
     'ttf-jetbrains-mono'
     'ttf-jetbrains-mono-nerd'
 )
-source=('.config')
+source=('')
 md5sums=('SKIP')
+install=stratos-kitty-config.install
+
+prepare() {
+	cp -r "$startdir/.config/" "$srcdir/"
+}
 
 package() {
     install -d "$pkgdir/etc/skel/.config"
     cp -r "$srcdir/.config/kitty/" "$pkgdir/etc/skel/.config/"
-    echo "Configuration files have been copied to /etc/skel."
-    echo "You may copy these files to ~/.config/ and make any changes you wish."
 }
